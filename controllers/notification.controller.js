@@ -18,22 +18,24 @@ response.status(200).json(status);
 
 export const ticketNotificationCreate = async (request, response) => {
     console.log("hitting notification create")
+    console.log(request.body.content)
     const notification = {
         subject: request.body.subject,
         content: request.body.content,
         ticketId: request.body.ticketId,
-        requester: request.body.requester,
+       
         receipientEmails: request.body.receipientEmails,
+         requester: request.body.requester,
         
     };
-    console.log(notification)
+    // console.log(notification)
     try {
         const newNotification = await ticketNotification.create(notification);
         response.status(201).json(newNotification);
 
     }
     catch (error) {
-        response.status(500).json({ message: error.message });lkh,j
+        response.status(500).json({ message: error.message });
 
 }
 }

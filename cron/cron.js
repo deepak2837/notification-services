@@ -15,7 +15,7 @@ export const cronService =()=> {cron.schedule('*/5 * * * * *', async () => {
 
     notifications.forEach(notification => {
         const mailData = {
-            from: 'anshulyadav9898@gmail.com',
+            from: 'peenu000@gmail.com',
             to: notification.receipientEmails,
             subject: notification.subject,
             text: notification.content
